@@ -1,11 +1,9 @@
 package br.com.getlucky.entity;
 
-import java.util.Date;
-
 public class Usuario {
 	
 	private String nome;
-	private Date dataDeNascimento;
+	private String dataDeNascimento;
 	
 	public String getNome() {
 		return nome;
@@ -15,11 +13,11 @@ public class Usuario {
 		this.nome = nome;
 	}
 	
-	public Date getDataDeNascimento() {
+	public String getDataDeNascimento() {
 		return dataDeNascimento;
 	}
 	
-	public void setDataDeNascimento(Date dataDeNascimento) {
+	public void setDataDeNascimento(String dataDeNascimento) {
 		this.dataDeNascimento = dataDeNascimento;
 	}
 

@@ -1,6 +1,7 @@
 package br.com.getlucky.activity.usuario;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -14,6 +15,7 @@ import br.com.getlucky.R;
 import br.com.getlucky.dialog.ErrorDialog;
 import br.com.getlucky.dialog.InfoDialog;
 import br.com.getlucky.entity.Usuario;
+import br.com.getlucky.repository.UsuarioRepository;
 
 public class CadastrarUsuarioActivity extends Activity {
 
@@ -22,6 +24,8 @@ public class CadastrarUsuarioActivity extends Activity {
 	private Button buttonSalvar;
 	
 	private Usuario usuario;
+	
+	private UsuarioRepository usuarioRepository;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +37,9 @@ public class CadastrarUsuarioActivity extends Activity {
         editTextNome = (EditText) findViewById(R.id.editText_usuario_nome);
 		datePickerDataDeNascimento = (DatePicker) findViewById(R.id.datePicker_usuario_dataDeNascimento);
 		buttonSalvar = (Button) findViewById(R.id.button_salvar);
-
+		
+		usuarioRepository = new UsuarioRepository(this);
+		
 		cadastrar();
 		
     }
@@ -42,15 +48,14 @@ public class CadastrarUsuarioActivity extends Activity {
 		
 		buttonSalvar.setOnClickListener(new OnClickListener() {
 			
-			@SuppressWarnings("deprecation")
 			public void onClick(View view) {
 				
 				Date dataAtual = new Date();
 				Date dataSelecionada;
 				
-				dataSelecionada = new Date(datePickerDataDeNascimento.getYear() - 1900,
+				dataSelecionada = new GregorianCalendar(datePickerDataDeNascimento.getYear(),
 						datePickerDataDeNascimento.getMonth(), 
-						datePickerDataDeNascimento.getDayOfMonth() -1);
+						datePickerDataDeNascimento.getDayOfMonth()).getTime();
 						
 			    long tempoDaDataAtual = dataAtual.getTime();
 			    long tempoDaDataSelecionada = dataSelecionada.getTime();
@@ -66,7 +71,9 @@ public class CadastrarUsuarioActivity extends Activity {
 			    	
 			    	setUsuario(new Usuario());
 					getUsuario().setNome(editTextNome.getText().toString());
-					getUsuario().setDataDeNascimento(dataSelecionada);
+					getUsuario().setDataDeNascimento(dataSelecionada.toString());
+					
+					usuarioRepository.inserir(usuario);
 					
 					showUsuarioCadastradoDialog();
 					

@@ -1,5 +1,8 @@
 package br.com.getlucky.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,15 +10,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import br.com.getlucky.R;
 import br.com.getlucky.activity.usuario.CadastrarUsuarioActivity;
-import br.com.getlucky.repository.util.BancoUtil;
-import br.com.getlucky.repository.util.CreateUtil;
+import br.com.getlucky.adapter.UsuarioArrayAdapter;
+import br.com.getlucky.entity.Usuario;
+import br.com.getlucky.repository.UsuarioRepository;
 
 public class MainActivity extends Activity {
 
 	private Button buttonCadastrarUsuario;
+	private ListView listView;
+	
+	private UsuarioRepository usuarioRepository;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +34,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         
         buttonCadastrarUsuario = (Button) findViewById(R.id.button_cadastrar_usuario);
+        listView = (ListView) findViewById(R.id.listView_usuarios_cadastrados);
         
         cadastrarUsuario();
-        executarCreates();
+        popularListaDeUsuarios();
 
     }
 
@@ -53,6 +63,14 @@ public class MainActivity extends Activity {
         
     }
     
+    @Override
+    protected void onRestart() {
+    	
+    	popularListaDeUsuarios();
+    	super.onRestart();
+    	
+    }
+    
     public void cadastrarUsuario() {
    	 
     	buttonCadastrarUsuario.setOnClickListener(new OnClickListener() {
@@ -68,9 +86,18 @@ public class MainActivity extends Activity {
  
 	}
     
-    public void executarCreates() {
+    public void popularListaDeUsuarios() {
     	
-    	new BancoUtil(this, CreateUtil.prepararCreates());
+    	usuarioRepository = new UsuarioRepository(this);
+    	
+    	List<Usuario> usuarios = usuarioRepository.consultar();
+    	
+    	if(usuarios == null)
+    		usuarios = new ArrayList<Usuario>();
+    	
+    	ArrayAdapter<Usuario> arrayAdapter = new UsuarioArrayAdapter(this, android.R.layout.simple_list_item_1, usuarios);
+    	
+    	listView.setAdapter(arrayAdapter);
     	
     }
 

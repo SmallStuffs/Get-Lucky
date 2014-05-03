@@ -12,6 +12,9 @@
     <string name="input_usuario_dataDeNascimento">Data de Nascimento:</string>
 
     <string name="label_ok">OK</string>
+    <string name="label_autenticacao">AUTENTICAÇÃO</string>
+    <string name="label_usuarios">USUÁRIOS</string>
+    <string name="label_usuario_nome">Nome</string>
     
     <string name="mensagem_usuario_cadastrado">Usuário cadastrado com sucesso!</string>
     <string name="mensagem_usuario_nao_cadastrado">Atenção! Aplicativo destinado à maiores de 18 anos.</string>

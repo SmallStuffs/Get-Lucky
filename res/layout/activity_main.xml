@@ -5,21 +5,38 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textView_autenticacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="@string/hello_world" />
+        android:text="@string/label_autenticacao" />
 
     <Button
         android:id="@+id/button_cadastrar_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/textView_autenticacao"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:text="@string/button_cadastrar_usuario" />
+	
+    <TextView
+        android:id="@+id/textView_usuarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_cadastrar_usuario"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/label_usuarios" />
+    
+    <ListView
+        android:id="@+id/listView_usuarios_cadastrados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_cadastrar_usuario"
+        android:layout_marginTop="70dp" >
+    </ListView>
     
 </RelativeLayout>

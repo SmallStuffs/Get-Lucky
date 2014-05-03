@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Get Lucky</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="button_cadastrar_usuario">Cadastrar usuario</string>
+    <string name="button_salvar">Salvar</string>
+    
+    <string name="input_usuario_nome">Nome:</string>
+    <string name="input_usuario_dataDeNascimento">Data de Nascimento:</string>
+
+    <string name="label_ok">OK</string>
+    
+    <string name="mensagem_usuario_cadastrado">Usuário cadastrado com sucesso!</string>
+    <string name="mensagem_usuario_nao_cadastrado">Atenção! Aplicativo destinado à maiores de 18 anos.</string>
+
+</resources>

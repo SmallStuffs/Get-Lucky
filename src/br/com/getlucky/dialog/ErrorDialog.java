@@ -19,7 +19,7 @@ public class ErrorDialog extends DialogFragment {
 				.setNeutralButton(R.string.label_ok, new OnClickListener() {
 			
 			public void onClick(DialogInterface dialog, int which) {
-
+				getActivity().finish();
 			}
 			
 		});

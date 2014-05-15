@@ -18,10 +18,12 @@ public class UsuarioRepository extends SQLiteOpenHelper implements InterfaceRepo
 
 	private static final String tabela = "tb_usuario";
 	
-	public static final String create = "CREATE TABLE " + tabela + " " + 
-			"(id INT PRIMARY KEY, " +
+	private static final String create = "CREATE TABLE " + tabela + " " + 
+			"(id INTEGER PRIMARY KEY, " +
 			"nome TEXT, " +
 			"data_de_nascimento TEXT);";
+	
+	private static final String drop = "DROP TABLE tb_usuario;"; 
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
@@ -30,6 +32,9 @@ public class UsuarioRepository extends SQLiteOpenHelper implements InterfaceRepo
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		
+		db.execSQL(drop);
+		db.execSQL(create);
 		
 	}
 	
@@ -66,6 +71,7 @@ public class UsuarioRepository extends SQLiteOpenHelper implements InterfaceRepo
 		
 		Usuario usuario = new Usuario();
 		
+		usuario.setId(cursor.getInt(cursor.getColumnIndex("id")));
 		usuario.setNome(cursor.getString(cursor.getColumnIndex("nome")));
 		usuario.setDataDeNascimento(cursor.getString(cursor.getColumnIndex("data_de_nascimento")));
 		

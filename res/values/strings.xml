@@ -7,6 +7,9 @@
     
     <string name="button_cadastrar_usuario">Cadastrar usuario</string>
     <string name="button_salvar">Salvar</string>
+    <string name="button_nova_aposta">Nova Aposta</string>
+    <string name="button_apostas_salvas">Apostas Salvas</string>
+    <string name="button_trocar_apostador">Trocar Apostador</string>
     
     <string name="input_usuario_nome">Nome:</string>
     <string name="input_usuario_dataDeNascimento">Data de Nascimento:</string>

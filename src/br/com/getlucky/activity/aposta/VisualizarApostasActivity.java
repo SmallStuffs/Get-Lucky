@@ -11,7 +11,7 @@ public class VisualizarApostasActivity extends Activity {
 		
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.activity_aposta_visualizar_aposta_gerada);
+		setContentView(R.layout.activity_aposta_visualizar);
 	    
 	}
 

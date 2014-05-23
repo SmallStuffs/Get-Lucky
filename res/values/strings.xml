@@ -13,13 +13,30 @@
     
     <string name="input_usuario_nome">Nome:</string>
     <string name="input_usuario_dataDeNascimento">Data de Nascimento:</string>
+    <string name="input_aposta_quantidade_de_numeros">Quantidade de Números:</string>
+    <string name="input_aposta_quantidade">Quantidade de Apostas:</string>
 
     <string name="label_ok">OK</string>
     <string name="label_autenticacao">AUTENTICAÇÃO</string>
     <string name="label_usuarios">USUÁRIOS</string>
+    <string name="label_usuario_cadastro">CADASTRAR USUÁRIO</string>
     <string name="label_usuario_nome">Nome</string>
+    <string name="label_aposta_gerar">GERAR APOSTA</string>
     
     <string name="mensagem_usuario_cadastrado">Usuário cadastrado com sucesso!</string>
     <string name="mensagem_usuario_nao_cadastrado">Atenção! Aplicativo destinado à maiores de 18 anos.</string>
+    
+     <string-array name="aposta_quantidade_de_numeros">
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
 
 </resources>

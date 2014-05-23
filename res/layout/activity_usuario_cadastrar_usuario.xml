@@ -4,6 +4,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 	
+    <TextView
+        android:id="@+id/textView_autenticacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/label_usuario_cadastro" />
+    
     <EditText
         android:id="@+id/editText_usuario_nome"
         android:layout_width="230dp"
@@ -22,10 +31,10 @@
         android:id="@+id/textView_usuario_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_autenticacao"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="40dp"
         android:text="@string/input_usuario_nome" />
 
     <TextView

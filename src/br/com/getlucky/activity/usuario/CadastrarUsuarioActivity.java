@@ -32,7 +32,7 @@ public class CadastrarUsuarioActivity extends Activity {
 
     	super.onCreate(savedInstanceState);
     	
-        setContentView(R.layout.activity_usuario_cadastro);
+        setContentView(R.layout.activity_usuario_cadastrar_usuario);
         
         editTextNome = (EditText) findViewById(R.id.editText_usuario_nome);
 		datePickerDataDeNascimento = (DatePicker) findViewById(R.id.datePicker_usuario_dataDeNascimento);

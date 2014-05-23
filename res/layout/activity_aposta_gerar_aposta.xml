@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView_aposta_gerar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/label_aposta_gerar" />
+
+      <TextView
+        android:id="@+id/textView_aposta_quantidade_de_numeros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView_aposta_gerar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/input_aposta_quantidade_de_numeros" />
+      
+    <Button
+        android:id="@+id/button_salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="69dp"
+        android:text="@string/button_salvar" />
+
+    <Spinner
+        android:id="@+id/spinner_aposta_quantidade_de_numeros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_aposta_gerar"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="32dp"
+        android:layout_toRightOf="@+id/textView_aposta_quantidade_de_numeros"
+        android:entries="@array/aposta_quantidade_de_numeros"
+        android:prompt="@string/input_aposta_quantidade_de_numeros" />
+
+</RelativeLayout>
